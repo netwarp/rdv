@@ -6,9 +6,49 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+body {
+  font-size: 1.6em;
+}
+
+.navbar {
+  margin-bottom: 0;
+  min-height: 60px;
+
+  .navbar-nav > li > a {
+    line-height: 32px;
+
+  }
+
+  #logo {
+    position: relative;
+    margin-top: -15px;
+  }
+}
+
+strong {
+  font-weight: lighter;
+}
+
+#footer {
+  background: #242424;
+  //    position: absolute;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+  padding: 20px 0;
+  margin-top: 20px;
+
+  a {
+    color: #ddd;
+    font-size: 13px;
+  }
+
+  .copyright {
+    border-top: 1px solid #3b3a3a;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 12px;
+  }
 }
