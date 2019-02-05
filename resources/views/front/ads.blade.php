@@ -88,6 +88,7 @@
 
 @section('js')
     @if (session('success'))
+        <script src="/js/sweetalert.min.js"></script>
         <script>
             swal('Merci', 'Votre annonce a bien été crée', "success")
         </script>
