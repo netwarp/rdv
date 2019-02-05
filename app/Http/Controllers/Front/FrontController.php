@@ -134,4 +134,9 @@ class FrontController extends Controller
             'ads' => $ads
         ]);
     }
+
+    public function getAd($id, $slug) {
+        $ad = Ad::where('data->public_id', $id)->first();
+        return view('front.ad', compact('ad'));
+    }
 }
