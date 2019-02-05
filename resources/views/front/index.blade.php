@@ -23,7 +23,11 @@
                                 <tbody>
                                     @foreach($offers as $ad)
                                         <tr>
-                                            <td></td>
+                                            <td>{{ $ad->data['name'] ?? '' }}</td>
+                                            <td>{{ $ad->data['currency'] ?? '' }}</td>
+                                            <td>{{ $ad->data['location'] ?? '' }}</td>
+                                            <td>{{ $ad->data['price'] ?? '' }}</td>
+                                            <td>{{ $ad->created_at->format('d/m/Y') }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -37,14 +41,25 @@
                         <div class="panel-body">
                             <table class="table table-striped table-hover">
                                 <thead>
-                                <tr>
-                                    <th>Utilisateur</th>
-                                    <th>Monnaie</th>
-                                    <th>Lieu</th>
-                                    <th>Prix</th>
-                                    <th>Date</th>
-                                </tr>
+                                    <tr>
+                                        <th>Utilisateur</th>
+                                        <th>Monnaie</th>
+                                        <th>Lieu</th>
+                                        <th>Prix</th>
+                                        <th>Date</th>
+                                    </tr>
                                 </thead>
+                                <tbody>
+                                    @foreach($requests as $ad)
+                                        <tr>
+                                            <td>{{ $ad->data['name'] ?? '' }}</td>
+                                            <td>{{ $ad->data['currency'] ?? '' }}</td>
+                                            <td>{{ $ad->data['location'] ?? '' }}</td>
+                                            <td>{{ $ad->data['price'] ?? '' }}</td>
+                                            <td>{{ $ad->created_at }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -136,17 +151,17 @@
                 <div class="col-md-3 stat">
                     {{ 30 * 24 }} mises à jours quotidiennes des cours
                 </div>
-                {{--
+
                 <div class="col-md-3 stat">
                     + {{ $offers->count() ?? '' }} <br> offres
                 </div>
+
                 <div class="col-md-3 stat">
                     + {{ $requests->count() ?? '' }} <br> demandes
                 </div>
                 <div class="col-md-3 stat">
                     {{ $posts_count ?? '' }} <br> article{{ $posts_count > 1 ? 's' : '' }} sur le blog
                 </div>
-                --}}
             </div>
             <div class="row" style="margin-top: 80px;">
                 <h5 class="title">Bientôt sur IOS et Android...</h5>
