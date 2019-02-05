@@ -139,4 +139,8 @@ class FrontController extends Controller
         $ad = Ad::where('data->public_id', $id)->first();
         return view('front.ad', compact('ad'));
     }
+
+    public function getCgu() {
+        return view('front.cgu');
+    }
 }
