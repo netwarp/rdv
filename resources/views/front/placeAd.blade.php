@@ -24,7 +24,7 @@
                     </div>
                 @endif
 
-                <form action="#" method="post">
+                <form action="{{ action('Front\FrontController@postPlaceAd') }}" method="post">
                     {{ csrf_field() }}
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -35,11 +35,9 @@
                                 <label for="currency">Monnaie</label>
                                 <input type="text" class="form-control" list="currency" autocomplete="on" name="currency" value="{{ old('currency') }}">
                                 <datalist id="currency">
-                                    {{--
                                     @foreach($currencies as $currency)
                                         <option value="{{ $currency }}">{{ $currency }}</option>
                                     @endforeach
-                                    --}}
                                 </datalist>
                             </div>
 

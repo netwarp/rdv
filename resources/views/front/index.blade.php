@@ -20,6 +20,13 @@
                                         <th>Date</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    @foreach($offers as $ad)
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>
