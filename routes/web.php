@@ -29,4 +29,6 @@ Route::group(['namespace' => 'Front'], function() {
 
     Route::get('conditions-generales-utilisations', ['as' => 'front.cgu', 'uses' => 'FrontController@getCgu']);
 
+    Route::get('api', ['as' => 'front.api', 'uses' => 'FrontController@getApi']);
+
 });

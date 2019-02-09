@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['namespace' => 'Api'], function() {
+    Route::get('offers', ['as' => 'api.getoffers', 'uses' => 'ApiController@getOffers']);
+    Route::get('requests', ['as' => 'api.getRequests', 'uses' => 'ApiController@getRequests']);
+    Route::post('rate', ['uses' => 'ApiController@postRate']);
+});

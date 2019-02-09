@@ -152,4 +152,8 @@ class FrontController extends Controller
     public function getCgu() {
         return view('front.cgu');
     }
+
+    public function getApi() {
+        return view('front.api');
+    }
 }
