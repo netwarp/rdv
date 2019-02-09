@@ -6,7 +6,7 @@
                     <li><a href="/deposer-annonce">Déposer une annonce</a></li>
                     <li><a href="/offres">Offres</a></li>
                     <li><a href="/demandes">Demandes</a></li>
-                    <li><a href="/monnaies">Monnaies</a></li>
+                    <li><a href="/crypto-monnaies">Crypto-monnaies</a></li>
                     <li><a href="/outils">Outils</a></li>
                 </ul>
             </div>

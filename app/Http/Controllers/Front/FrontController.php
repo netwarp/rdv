@@ -140,6 +140,15 @@ class FrontController extends Controller
         return view('front.ad', compact('ad'));
     }
 
+    public function getCurrencies() {
+        try {
+            return view('front.currencies');
+        } catch (\Exception $e) {
+            \Debugbar::addException( $e );
+            return redirect()->back()->with( 'error', 'Une erreur est survenue, merci de ré-essayer' );
+        }
+    }
+
     public function getCgu() {
         return view('front.cgu');
     }

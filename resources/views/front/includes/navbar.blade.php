@@ -19,7 +19,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plus <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li class="{{ Route::currentRouteName() == 'front.getCurrencies' ? 'active' : '' }}"><a href="/monnaies">Monnaies</a></li>
+                        <li class="{{ Route::currentRouteName() == 'front.getCurrencies' ? 'active' : '' }}"><a href="/crypto-monnaies">Crypto-monnaies</a></li>
                         <li class="{{ Route::currentRouteName() == 'front.getTools' ? 'active' : '' }}"><a href="/outils">Outils</a></li>
                         <li class="{{ Route::currentRouteName() == 'front.api' ? 'active' : '' }}"><a href="/api">API</a></li>
                     </ul>
