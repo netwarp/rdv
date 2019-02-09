@@ -149,6 +149,10 @@ class FrontController extends Controller
         }
     }
 
+    public function getTools() {
+        return view('front.tools');
+    }
+
     public function getCgu() {
         return view('front.cgu');
     }

@@ -26,6 +26,8 @@ Route::group(['namespace' => 'Front'], function() {
     Route::get('utilisateur/{name}', ['as' => 'front.getProfil', 'uses' => 'FrontController@getUser']);
 
     Route::get('crypto-monnaies', ['as' => 'front.getCurrencies', 'uses' => 'FrontController@getCurrencies']);
+    Route::get('outils', ['as' => 'front.getTools', 'uses' => 'FrontController@getTools']);
+
 
     Route::get('conditions-generales-utilisations', ['as' => 'front.cgu', 'uses' => 'FrontController@getCgu']);
 
