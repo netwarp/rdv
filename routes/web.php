@@ -25,37 +25,8 @@ Route::group(['namespace' => 'Front'], function() {
 
     Route::get('utilisateur/{name}', ['as' => 'front.getProfil', 'uses' => 'FrontController@getUser']);
 
+    Route::get('crypto-monnaies', ['as' => 'front.getCurrencies', 'uses' => 'FrontController@getCurrencies']);
+
     Route::get('conditions-generales-utilisations', ['as' => 'front.cgu', 'uses' => 'FrontController@getCgu']);
 
 });
-
-/*
-Route::get('/', function () {
-    return view('front.index');
-});
-
-Route::get('deposer-annonce', function () {
-    return view('front.placeAd');
-});
-
-Route::get('offres', function () {
-    return view('front.ads');
-});
-
-Route::get('demandes', function () {
-    return view('front.ads');
-});
-
-Route::get('cours', function () {
-    return view('front.curves');
-});
-
-Route::get('blog', function () {
-    return view('front.blog');
-});
-
-Route::get('api', function () {
-    return view('front.api');
-});
-*/
-
