@@ -29,11 +29,11 @@
                     <li><a href="/login" class="btn-account"><button class="btn btn-primary btn-lg">Connexion</button></a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="glyphicon glyphicon-home"></i> Espace membre</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Paramètres</a></li>
-                            <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                            <li><a href="#"><i class="fas fa-home"></i> <span class="sub-title">Espace membre</span></a></li>
+                            <li><a href="#"><i class="fas fa-tools"></i> <span class="sub-title">Paramètres</span></a></li>
+                            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> <span class="sub-title">Logout</span></a></li>
                         </ul>
                     </li>
                 @endif
