@@ -38,3 +38,7 @@ Route::group(['namespace' => 'Front'], function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'profil', 'namespace' => 'Profil', 'middleware' => 'auth', 'as' => 'profil.'], function () {
+    Route::get('/', ['as' => 'user.getIndex', 'uses' => 'ProfilController@getIndex']);
+});
