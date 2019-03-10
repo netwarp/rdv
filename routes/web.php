@@ -35,7 +35,8 @@ Route::group(['namespace' => 'Front'], function() {
     Route::get('api', ['as' => 'front.api', 'uses' => 'FrontController@getApi']);
 
 });
-Auth::routes();
+Auth::routes(['verify' => true]);
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
