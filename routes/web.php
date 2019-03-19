@@ -28,9 +28,11 @@ Route::group(['namespace' => 'Front'], function() {
     Route::get('crypto-monnaies', ['as' => 'front.getCurrencies', 'uses' => 'FrontController@getCurrencies']);
     Route::get('outils', ['as' => 'front.getTools', 'uses' => 'FrontController@getTools']);
     Route::get('cours', ['as' => 'front.getCurves', 'uses' => 'FrontController@getCurves']);
-
-
     Route::get('conditions-generales-utilisations', ['as' => 'front.cgu', 'uses' => 'FrontController@getCgu']);
+    Route::get('a-propos', ['as' => 'front.about', 'uses' => 'FrontController@getAbout']);
+
+    Route::get('contact', ['as' => 'front.contact', 'uses' => 'FrontController@getContact']);
+    Route::post('contact', ['as' => 'front.postContact', 'uses' => 'FrontController@postContact']);
 
     Route::get('api', ['as' => 'front.api', 'uses' => 'FrontController@getApi']);
 

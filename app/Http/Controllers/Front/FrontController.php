@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Ad;
 use DB;
 use Illuminate\Support\Facades\Redis;
+use Carbon\Carbon;
 
 
 class FrontController extends Controller
@@ -155,6 +156,30 @@ class FrontController extends Controller
 
     public function getCgu() {
         return view('front.cgu');
+    }
+
+    public function getAbout() {
+        return view('front.about');
+    }
+
+    public function getContact() {
+        return view('front.contact');
+    }
+
+    public function postContact(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required | email',
+            'message' => 'required'
+        ]);
+        $data = [
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'message' => $request->get('message'),
+            'ip' => hash('sha512', $request->ip())
+        ];
+        DB::table('messages')->insert(['data' => json_encode($data), 'created_at' => Carbon::now() ]);
+        return redirect()->back()->with('success', 'Votre message a bien été envoyé, nous vous enverrons une réponse dans les meilleurs délais');
     }
 
     public function getApi() {
