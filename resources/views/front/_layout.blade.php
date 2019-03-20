@@ -18,5 +18,12 @@
                 swal('Erreur', '{{ session('error') }}', 'error')
             </script>
         @endif
+
+        @if (session('success'))
+            <script src="/js/sweetalert.min.js"></script>
+            <script>
+                swal('Merci', '{{ session('success') }}', "success")
+            </script>
+        @endif
     </body>
 </html>
