@@ -10,33 +10,30 @@
                     <div class="panel-body">
                         <table class="table table-striped table-hover table-responsive">
                             <thead>
-                            <th>Nom</th>
-                            <th>Symbole</th>
-                            <th>prix en dollar</th>
-                            <th>prix en bitcoin</th>
-                            <th>% 1H</th>
-                            <th>% 24H</th>
-                            <th>% 7 J</th>
-                            <th>MAJ</th>
+                                <th>Nom</th>
+                                <th>Symbole</th>
+                                <th>prix en dollar</th>
+                                <th>% 24H</th>
+                                <th>MAJ</th>
                             </thead>
                             <tbody>
-                            {{--
-                            @foreach($currencies as $currency)
-                                <tr>
-                                    <td>{{ $currency->id }}</td>
-                                    <td>{{ $currency->symbol }}</td>
-                                    <td>{{ $currency->price_usd }}</td>
-                                    <td>{{ $currency->price_btc }}</td>
-                                    <td class="{{ $currency->percent_change_1h > 0 ? 'arrow-up' : 'arrow-down' }}">{{ $currency->percent_change_1h }}</td>
-                                    <td class="{{ $currency->percent_change_24h > 0 ? 'arrow-up' : 'arrow-down' }}">{{ $currency->percent_change_24h }} </td>
-                                    <td class="{{ $currency->percent_change_7d > 0 ? 'arrow-up' : 'arrow-down' }}">{{ $currency->percent_change_7d }}</td>
-                                    <td>{{ date('d-m-Y H:i:s', $currency->last_updated) }}</td>
-                                </tr>
-                            @endforeach
-                            --}}
+                                @foreach($currencies as $currency)
+                                    <tr>
+                                        {{dd($currency)}}
+                                        <td>{{ $currency->baseId }}</td>
+                                        <td>{{ $currency->baseSymbol }}</td>
+                                        <td>{{ $currency->priceUsd }}</td>
+                                        <td class="{{ $currency->volumeUsd24Hr > 0 ? 'arrow-up' : 'arrow-down' }}">{{ $currency->volumeUsd24Hr }} </td>
+                                        <td>{{ $currency->updated }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         <hr>
+                        <div>
+                            Dernière MAJ: {{ $timestamp}}
+                        </div>
+
                         Source: <a href="https://coinmarketcap.com">coinmarketcap.com</a>
                     </div>
                 </div>

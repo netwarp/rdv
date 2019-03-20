@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function() {
             # SSH crontab -e
-            $url = 'https://api.coincap.io/v2/assets?limit=5';
+            $url = 'https://api.coincap.io/v2/markets';
             $data = file_get_contents($url);
             if ($data) {
                 Redis::set('data', $data);
@@ -36,7 +36,7 @@ class Kernel extends ConsoleKernel
             else {
                 logger('no data');
             }
-        })->hourly();
+        })->everyMinute();
     }
 
     /**

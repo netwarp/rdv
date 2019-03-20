@@ -188,16 +188,15 @@ class FrontController extends Controller
 
     public function getCurves() {
         try {
-            $currencies = Redis::get('data');
-            $currencies = json_decode($currencies);
+            $data = Redis::get('data');
+            $data = json_decode($data);
+
+            $currencies = $data->data;
+            $timestamp = $data->timestamp;
+            $timestamp = Carbon::createFromTimestamp($timestamp);
+      
             if (is_iterable($currencies)) {
-                foreach ($currencies as $currency) {
-                    $addSeconds = 60 * 60 * 2;
-                    $currency->last_updated = $currency->last_updated + $addSeconds;
-                }
-                return view('front.curves', [
-                    'currencies' => $currencies
-                ]);
+                return view('front.curves', compact('currencies', 'timestamp'));
             }
             else {
                 return redirect()->back()->with( 'error', 'Une erreur est survenue, merci de ré-essayer' );
