@@ -6,7 +6,7 @@
                 <input type="text" class="form-control" name="word">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">
-                        <span class="glyphicon glyphicon-search"></span>
+                        <i class="fas fa-search"></i>
                     </button>
                 </span>
             </div>

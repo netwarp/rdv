@@ -34,6 +34,12 @@ Route::group(['namespace' => 'Front'], function() {
     Route::get('contact', ['as' => 'front.contact', 'uses' => 'FrontController@getContact']);
     Route::post('contact', ['as' => 'front.postContact', 'uses' => 'FrontController@postContact']);
 
+    Route::get('blog', ['as' => 'front.blog.index', 'uses' => 'BlogController@getIndex']);
+    Route::get('blog/{post}', ['as' => 'front.blog.post', 'uses' => 'BlogController@getPost']);
+    Route::get('blog/tag/{tag}', ['as' => 'front.blog.getTag', 'uses' => 'BlogController@getTag']);
+    Route::get('blog/recherche', ['as' => 'front.blog.getSearch', 'uses' => 'BlogController@getSearch']);
+    Route::post('blog/post/{id}', ['as' => 'front.blog.postComment', 'uses' => 'BlogController@postComment']);
+
     Route::get('api', ['as' => 'front.api', 'uses' => 'FrontController@getApi']);
 
 });
