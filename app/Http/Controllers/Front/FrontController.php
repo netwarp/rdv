@@ -206,4 +206,8 @@ class FrontController extends Controller
             return redirect()->back()->with( 'error', 'Une erreur est survenue, merci de ré-essayer' );
         }
     }
+
+    public function test() {
+        
+    }
 }

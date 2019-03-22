@@ -42,6 +42,8 @@ Route::group(['namespace' => 'Front'], function() {
 
     Route::get('api', ['as' => 'front.api', 'uses' => 'FrontController@getApi']);
 
+    Route::get('/test', 'FrontController@test');
+
 });
 Auth::routes(['verify' => true]);
 
