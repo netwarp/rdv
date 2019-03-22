@@ -1,5 +1,13 @@
 @extends('front._layout')
 
+@push('css')
+    <style>
+        .form-group {
+            margin-bottom: 2.2rem;
+        }
+    </style>
+@endpush
+
 @section('content')
     <div class="container">
         <div class="row">

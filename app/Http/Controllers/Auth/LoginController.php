@@ -27,6 +27,16 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
 
+    public function authenticated()
+    {
+        if(auth()->user()->status == 'admin')
+        {
+            return redirect('/admin');
+        }
+        
+        return redirect('/profil');
+    }
+
     /**
      * Create a new controller instance.
      *
