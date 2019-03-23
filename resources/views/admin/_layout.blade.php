@@ -59,8 +59,8 @@
                         <div class="list-group">
                             <a href="{{ action('Admin\UsersController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Users') ? 'active' : '' }}">Users</a>
                             <a href="{{ action('Admin\AdsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Ads') ? 'active' : '' }}">Ads</a>
+                            <a href="{{ action('Admin\PostsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Posts') ? 'active' : '' }}">Posts</a>
                             {{--
-                            <a href="{{ action('Admin\PostsController@index') }}" class="list-group-item">Posts</a>
                             <a href="{{ action('Admin\CommentsController@index') }}" class="list-group-item">Comments</a>
                             <a href="{{ action('Admin\MessagesController@index') }}" class="list-group-item">Messages</a>
                             --}}

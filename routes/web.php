@@ -66,5 +66,17 @@ Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => 'auth
 Route::group(['prefix' => 'profil', 'namespace' => 'Profil', 'middleware' => 'auth', 'as' => 'profil.'], function () {
     Route::get('/', ['as' => 'user.getIndex', 'uses' => 'ProfilController@getIndex']);
 
+});
 
+Route::get('/images/{folder}/{file}', function($folder, $file) {
+    $path = storage_path("app/images/{$folder}/{$file}");
+    if (! File::exists($path)) {
+        return;
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header('Content-Type', $type);
+    return $response;
 });
