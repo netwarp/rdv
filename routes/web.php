@@ -50,6 +50,21 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => 'auth', 'as' => 'admin.'], function() {
+    Route::get('/', ['as' => 'admin.getIndex', 'uses' => 'AdminController@getIndex']);
+
+    Route::resources([
+        'users' => 'UsersController',
+        'ads' => 'AdsController',
+        'posts' => 'PostsController',
+        'comments' => 'CommentsController',
+        'messages' => 'MessagesController',
+    ]);
+});
+
+
 Route::group(['prefix' => 'profil', 'namespace' => 'Profil', 'middleware' => 'auth', 'as' => 'profil.'], function () {
     Route::get('/', ['as' => 'user.getIndex', 'uses' => 'ProfilController@getIndex']);
+
+
 });
