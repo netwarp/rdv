@@ -137,29 +137,31 @@
             </div>
         </div>
     </section>
-
+    {{--
     <section id="curve">
         <h3 class="title">Restez informé des cours</h3>
         <p>Vous pouvez suivre les cours du bitcoin, ether, litecoin, monero et plein d'autres.</p>
         <a href="/cours" class="btn btn-primary btn-lg">Voir les cours</a>
     </section>
+    --}}
 
     <section id="stats">
         <div class="container">
             <h4 class="title">Quelques chiffres en bref</h4>
             <div class="row">
+                {{--
                 <div class="col-md-3 stat">
                     {{ 30 * 24 }} mises à jours quotidiennes des cours
                 </div>
-
-                <div class="col-md-3 stat">
+                --}}
+                <div class="col-md-4 stat">
                     + {{ $offers->count() ?? '' }} <br> offres
                 </div>
 
-                <div class="col-md-3 stat">
+                <div class="col-md-4 stat">
                     + {{ $requests->count() ?? '' }} <br> demandes
                 </div>
-                <div class="col-md-3 stat">
+                <div class="col-md-4 stat">
                     {{ $posts_count ?? '' }} <br> article{{ $posts_count > 1 ? 's' : '' }} sur le blog
                 </div>
             </div>
