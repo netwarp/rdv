@@ -50,7 +50,9 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => 'auth', 'as' => 'admin.'], function() {
+Route::get('/logout', function() { Auth::logout(); return redirect('/'); });
+
+Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => ['auth', 'isAdmin'], 'as' => 'admin.'], function() {
     Route::get('/', ['as' => 'admin.getIndex', 'uses' => 'AdminController@getIndex']);
 
     Route::resources([
