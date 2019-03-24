@@ -14,7 +14,7 @@
                 <li class="{{ Route::currentRouteName() == 'front.getPlaceAd' ? 'active' : '' }}"><a href="/deposer-annonce">Déposer une annonce <span class="sr-only">(current)</span></a></li>
                 <li class="{{ Route::currentRouteName() == 'front.getOffers' ? 'active' : '' }}"><a href="/offres">Offres</a></li>
                 <li class="{{ Route::currentRouteName() == 'front.getRequests' ? 'active' : '' }}"><a href="/demandes">Demandes</a></li>
-                <li class="{{ Route::currentRouteName() == 'front.getCurves' ? 'active' : '' }}"><a href="/cours">Cours</a></li>
+                {{-- <li class="{{ Route::currentRouteName() == 'front.getCurves' ? 'active' : '' }}"><a href="/cours">Cours</a></li> --}}
                 <li class="{{ Route::currentRouteName() == 'front.getBlog' ? 'active' : '' }}"><a href="/blog">Blog</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plus <span class="caret"></span></a>
