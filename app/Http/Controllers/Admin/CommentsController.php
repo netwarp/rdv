@@ -30,7 +30,7 @@ class CommentsController extends Controller
     public function edit($id) {
         $comment = Comment::findOrFail($id);
 
-        return view('admin.entities.comments.edit', compact('comment'));
+        return view('admin.comments.edit', compact('comment'));
     }
 
     public function update($id, Request $request) {

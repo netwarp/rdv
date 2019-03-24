@@ -62,8 +62,8 @@
                             <a href="{{ action('Admin\AdsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Ads') ? 'active' : '' }}"><i class="fab fa-adversal"></i> Ads</a>
                             <a href="{{ action('Admin\PostsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Posts') ? 'active' : '' }}"><i class="far fa-newspaper"></i> Posts</a>
                             <a href="{{ action('Admin\CommentsController@index') }}" class="list-group-item"><i class="fas fa-comments"></i> Comments</a>
-                            {{--
                             <a href="{{ action('Admin\MessagesController@index') }}" class="list-group-item"><i class="fas fa-envelope-open"></i> Messages</a>
+                            {{--
                             <a href="{{ action('Admin\SettingsController@index') }}" class="list-group-item"><i class="fas fa-envelope-open"></i><i class="fas fa-cogs"></i> Settings</a>
                             --}}
                         </div>
