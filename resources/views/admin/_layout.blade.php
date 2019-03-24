@@ -6,7 +6,8 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css">
-        <title>Document</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <title>Admin</title>
         <style>
             body {
                 background: #f1f2f6;
@@ -57,12 +58,13 @@
                             <div class="h3"><a href="#">Bienvenue</a></div>
                         </div>
                         <div class="list-group">
-                            <a href="{{ action('Admin\UsersController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Users') ? 'active' : '' }}">Users</a>
-                            <a href="{{ action('Admin\AdsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Ads') ? 'active' : '' }}">Ads</a>
-                            <a href="{{ action('Admin\PostsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Posts') ? 'active' : '' }}">Posts</a>
-                            <a href="{{ action('Admin\CommentsController@index') }}" class="list-group-item">Comments</a>
+                            <a href="{{ action('Admin\UsersController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Users') ? 'active' : '' }}"><i class="fas fa-users"></i> Users</a>
+                            <a href="{{ action('Admin\AdsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Ads') ? 'active' : '' }}"><i class="fab fa-adversal"></i> Ads</a>
+                            <a href="{{ action('Admin\PostsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Posts') ? 'active' : '' }}"><i class="far fa-newspaper"></i> Posts</a>
+                            <a href="{{ action('Admin\CommentsController@index') }}" class="list-group-item"><i class="fas fa-comments"></i> Comments</a>
                             {{--
-                            <a href="{{ action('Admin\MessagesController@index') }}" class="list-group-item">Messages</a>
+                            <a href="{{ action('Admin\MessagesController@index') }}" class="list-group-item"><i class="fas fa-envelope-open"></i> Messages</a>
+                            <a href="{{ action('Admin\SettingsController@index') }}" class="list-group-item"><i class="fas fa-envelope-open"></i><i class="fas fa-cogs"></i> Settings</a>
                             --}}
                         </div>
                     </div>
