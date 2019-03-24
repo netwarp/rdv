@@ -9,6 +9,7 @@ use Markdown;
 use DOMDocument;
 use File;
 use Storage;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -48,8 +49,11 @@ class PostsController extends Controller
             'content' => $request->get('content')
         ];
 
-        if ($request->has('created_at')) {
+        if ($request->filled('created_at')) {
             $data['created_at'] = $request->get('created_at');
+        }
+        else {
+            $data['created_at'] = Carbon::now();
         }
 
         if ($request->file('image')) {
@@ -108,7 +112,7 @@ class PostsController extends Controller
             'content' => $request->get('content')
         ];
 
-        if ($request->has('created_at')) {
+        if ($request->filled('created_at')) {
             $data['created_at'] = $request->get('created_at');
         }
 

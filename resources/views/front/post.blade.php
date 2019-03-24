@@ -31,7 +31,7 @@
                         @else
                             <div class="col-md-12">
                                 <div class="alert alert-info">
-                                    Bien que nous soyons partisans d'une liberté d'expression totale, nous rappelons à nos lecteurs que la courtoisie et l'orthographe est de mise dans les commentaires. <br>
+                                    Nous rappelons à nos lecteurs que l'orthographe est de mise et qu'ils sont les seuls responsables de leurs propos. <br>
                                     La modération.
                                 </div>
                             </div>
