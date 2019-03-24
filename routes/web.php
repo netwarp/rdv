@@ -61,6 +61,7 @@ Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => ['aut
         'posts' => 'PostsController',
         'comments' => 'CommentsController',
         'messages' => 'MessagesController',
+        'settings' => 'SettingsController'
     ]);
 });
 

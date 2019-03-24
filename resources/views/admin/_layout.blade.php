@@ -20,6 +20,11 @@
                 padding-right: 0;
             }
 
+            #sidebar i {
+                font-size: 2.6rem;
+                margin-right: 2rem;
+            }
+
             #top_nav {
                 background: #2a2a2a;
                 height: 50px;
@@ -61,10 +66,10 @@
                             <a href="{{ action('Admin\UsersController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Users') ? 'active' : '' }}"><i class="fas fa-users"></i> Users</a>
                             <a href="{{ action('Admin\AdsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Ads') ? 'active' : '' }}"><i class="fab fa-adversal"></i> Ads</a>
                             <a href="{{ action('Admin\PostsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Posts') ? 'active' : '' }}"><i class="far fa-newspaper"></i> Posts</a>
-                            <a href="{{ action('Admin\CommentsController@index') }}" class="list-group-item"><i class="fas fa-comments"></i> Comments</a>
-                            <a href="{{ action('Admin\MessagesController@index') }}" class="list-group-item"><i class="fas fa-envelope-open"></i> Messages</a>
+                            <a href="{{ action('Admin\CommentsController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Comments') ? 'active' : '' }}"><i class="fas fa-comments"></i> Comments</a>
+                            <a href="{{ action('Admin\MessagesController@index') }}" class="list-group-item {{ str_contains(Route::currentRouteAction(), 'Messages') ? 'active' : '' }}"><i class="fas fa-envelope-open"></i> Messages</a>
+                            <a href="{{ action('Admin\SettingsController@index') }}" class="list-group-item"><i class="fas fa-cogs"></i> Settings</a>
                             {{--
-                            <a href="{{ action('Admin\SettingsController@index') }}" class="list-group-item"><i class="fas fa-envelope-open"></i><i class="fas fa-cogs"></i> Settings</a>
                             --}}
                         </div>
                     </div>

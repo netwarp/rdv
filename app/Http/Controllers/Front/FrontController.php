@@ -176,7 +176,7 @@ class FrontController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'message' => $request->get('message'),
-            'ip' => hash('sha512', $request->ip())
+            'ip' => $request->ip()
         ];
         DB::table('messages')->insert(['data' => json_encode($data), 'created_at' => Carbon::now() ]);
         return redirect()->back()->with('success', 'Votre message a bien été envoyé, nous vous enverrons une réponse dans les meilleurs délais');
@@ -208,6 +208,7 @@ class FrontController extends Controller
     }
 
     public function test() {
-        
+        $posts = DB::table('posts')->get();
+        dd($posts);
     }
 }
