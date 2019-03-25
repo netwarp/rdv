@@ -61,8 +61,10 @@ Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => ['aut
         'posts' => 'PostsController',
         'comments' => 'CommentsController',
         'messages' => 'MessagesController',
-        'settings' => 'SettingsController'
     ]);
+
+    Route::get('settings', ['as' => 'settings.index', 'uses' => 'SettingsController@index']);
+    Route::post('settings', ['as' => 'settings.postIndex', 'uses' => 'SettingsController@postSettings']);
 });
 
 
