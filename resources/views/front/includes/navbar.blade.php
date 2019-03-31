@@ -15,7 +15,7 @@
                 <li class="{{ Route::currentRouteName() == 'front.getOffers' ? 'active' : '' }}"><a href="/offres">Offres</a></li>
                 <li class="{{ Route::currentRouteName() == 'front.getRequests' ? 'active' : '' }}"><a href="/demandes">Demandes</a></li>
                 {{-- <li class="{{ Route::currentRouteName() == 'front.getCurves' ? 'active' : '' }}"><a href="/cours">Cours</a></li> --}}
-                <li class="{{ Route::currentRouteName() == 'front.getBlog' ? 'active' : '' }}"><a href="/blog">Blog</a></li>
+                <li class="{{ Route::currentRouteName() == 'front.blog.index' ? 'active' : '' }}"><a href="/blog">Blog</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plus <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -31,8 +31,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fas fa-home"></i> <span class="sub-title">Espace membre</span></a></li>
-                            <li><a href="#"><i class="fas fa-tools"></i> <span class="sub-title">Paramètres</span></a></li>
+                            <li><a href="{{ action('Profil\ProfilController@getIndex') }}"><i class="fas fa-home"></i> <span class="sub-title">Espace membre</span></a></li>
+                            <li><a href="{{ action('Profil\SettingsController@getIndex') }}"><i class="fas fa-tools"></i> <span class="sub-title">Paramètres</span></a></li>
                             <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> <span class="sub-title">Logout</span></a></li>
                         </ul>
                     </li>
