@@ -1,9 +1,9 @@
 <div class="col-md-4">
     <div class="well">
         <h4>Recherche</h4>
-        <form action="/blog/recherche" method="GET">
+        <form action="/blog" method="GET">
             <div class="input-group">
-                <input type="text" class="form-control" name="word">
+                <input type="text" class="form-control" name="search">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                         <i class="fas fa-search"></i>

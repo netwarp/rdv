@@ -11,8 +11,18 @@ use Carbon\Carbon;
 
 class BlogController extends Controller
 {
-    public function getIndex() {
-		$posts = Post::where('status', 'published')->orderBy('id', 'desc')->paginate(4);
+    public function getIndex(Request $request) {
+
+        if ($request->filled('search')) {
+            $search = $request->get('search');
+            $posts = Post::where('title','LIKE',"%{$search}%")
+                ->orWhere('content','LIKE',"%{$search}%")
+                ->paginate(4);
+        }
+        else {
+		    $posts = Post::where('status', 'published')->orderBy('id', 'desc')->paginate(4);
+        }
+
         return view('front.blog', [
             'posts' => $posts
         ]);
@@ -35,10 +45,6 @@ class BlogController extends Controller
         return view('front.blog', [
             'posts' => $posts
         ]);
-    }
-
-   	public function getSearch() {
-        dd('ok');
     }
 
     public function postComment($id, Request $request) {
