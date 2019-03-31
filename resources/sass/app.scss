@@ -194,3 +194,42 @@ strong {
         }
     }
 }
+
+// PROFIL
+
+#sidebar {
+    min-height: 67vh;
+    margin-bottom: -2rem;
+    background: #fff;
+    padding: 0;
+    border: 1px solid rgba(#000, 0.1);
+
+    ul {
+        padding: 0;
+
+        li {
+            list-style-type: none;
+
+            a {
+                display: block;
+                width: 100%;
+                font-size: 1.8rem;
+                padding: 1rem;
+                color: #636b6f;
+                
+                &:hover {
+                    text-decoration: none;
+                    background: #636b6f;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+#main-profil {
+    .breadcrumb {
+        background: #fff;
+        border: 1px solid rgba(#000, 0.1)
+    }
+}
