@@ -71,6 +71,15 @@ Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => ['aut
 Route::group(['prefix' => 'profil', 'namespace' => 'Profil', 'middleware' => 'auth', 'as' => 'profil.'], function () {
     Route::get('/', ['as' => 'user.getIndex', 'uses' => 'ProfilController@getIndex']);
 
+    Route::resources([
+        'annonces' => 'AdsController'
+    ]);
+
+    Route::get('notations', ['as' => 'user.getRates', 'uses' => 'RatesController@getIndex']);
+
+    Route::get('parametres', ['as' => 'user.getSettings', 'uses' => 'SettingsController@getIndex']);
+    Route::post('parametres', ['as' => 'user.postSettings', 'uses' => 'SettingsController@postIndex']);
+
 });
 
 Route::get('/images/{folder}/{file}', function($folder, $file) {

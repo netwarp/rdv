@@ -426,13 +426,13 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Accueil">
-                <a class="nav-link" href="{{ '' }}">
+                <a class="nav-link" href="{{ action('Profil\ProfilController@getIndex') }}">
                     <i class="fa fa-fw fa-home"></i>
                     <span class="nav-link-text">Accueil</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Annonces">
-                <a class="nav-link" href="{{ '' }}">
+                <a class="nav-link" href="{{ action('Profil\AdsController@index') }}">
                     <i class="fa fa-fw fa-bullhorn"></i>
                     <span class="nav-link-text">Annonces</span>
                 </a>

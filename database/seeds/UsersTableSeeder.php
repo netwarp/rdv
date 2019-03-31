@@ -11,13 +11,25 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        DB::table('users')->truncate();
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         DB::table('users')->insert([
-            'name' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('admin'),
-            'status' => 'admin'
+            [
+                'name' => 'admin',
+                'email' => 'admin@admin.com',
+                'password' => bcrypt('admin'),
+                'status' => 'admin'
+            ],
+            [
+                'name' => 'toto',
+                'email' => 'toto@toto.com',
+                'password' => bcrypt('toto'),
+                'status' => 'user'
+            ],
         ]);
 
     }
