@@ -1,10 +1,10 @@
 @extends('front._layout')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="margin: 3rem 0 0 0;">
         <div class="row" style="min-height: 62vh;">
             <div class="col-md-9">
-                <div class="panel panel-default" style="margin: 3rem 0 0 0;">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h1>{{ $title ?? '' }}</h1>
                     </div>
@@ -42,7 +42,7 @@
 
                 </ul>
             </div>
-            <div class="col-md-3" style="margin: 2rem 0 0 0">
+            <div class="col-md-3">
                 <noscript>
                     <div class="alert alert-info">
                         Les filtres de recherches sont disponible uniquement avec Javascript.
@@ -51,11 +51,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h2 class="h4">Filtres de recherche</h2>
-                        <h3 class="h4">Region</h3>
-                        <select class="form-control">
-                            <option value="#">Choississez une région</option>
-                            <option value="ile-de-france">Ile de France</option>
-                        </select>
+                  
                         <div>
                             <h3 class="h4">Prix</h3>
                             <div class="row">
