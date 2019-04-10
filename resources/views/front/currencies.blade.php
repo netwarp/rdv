@@ -8,31 +8,31 @@
             'wallets' => [
                 [
                     'name' => 'Ledger',
-                    'link' => '#',
+                    'link' => 'https://www.ledger.com',
                 ],
                 [
                     'name' => 'Trezor',
-                    'link' => '#',
+                    'link' => 'https://trezor.io',
                 ],
                 [
                     'name' => 'KeepKey',
-                    'link' => '#',
+                    'link' => 'https://shapeshift.io/keepkey/',
                 ],
                 [
                     'name' => 'OpenDime',
-                    'link' => '#',
+                    'link' => 'https://opendime.com',
                 ],
                 [
                     'name' => 'Armory',
-                    'link' => '#',
+                    'link' => 'https://www.bitcoinarmory.com',
                 ],
                 [
                     'name' => 'Jaxx',
-                    'link' => '#',
+                    'link' => 'https://jaxx.io',
                 ],
                 [
                     'name' => 'Electrum',
-                    'link' => '#',
+                    'link' => 'https://electrum.org/#home',
                 ],
             ]
         ],
@@ -42,7 +42,7 @@
             'wallets' => [
                 [
                     'name' => 'Ledger',
-                    'link' => '#',
+                    'link' => 'https://www.ledger.com',
                 ],
             ]
         ],
@@ -52,8 +52,16 @@
             'wallets' => [
                 [
                     'name' => 'Ledger',
-                    'link' => '#',
+                    'link' => 'https://www.ledger.com',
                 ],
+                [
+                    'name' => 'official wallet',
+                    'link' => 'https://www.getmonero.org',
+                ],
+                [
+                    'name' => 'monerujo',
+                    'link' => 'https://www.monerujo.io'
+                ]
             ],
         ],
         [
@@ -62,16 +70,16 @@
             'wallets' => [
                 [
                     'name' => 'Ledger',
-                    'link' => '#',
+                    'link' => 'https://www.ledger.com',
                 ],
                 [
                     'name' => 'Trezor',
-                    'link' => '#',
+                    'link' => 'https://trezor.io',
                 ],
                 [
                     'name' => 'KeepKey',
-                    'link' => '#',
-                ]
+                    'link' => 'https://shapeshift.io/keepkey/',
+                ],
             ]
         ]
     ];
@@ -102,7 +110,7 @@
                             <h3 class="h4">Wallets :</h3>
                             <ul>
                                 @foreach($currency['wallets'] as $wallet)
-                                    <li><a href="{{ $wallet['link'] }}">{{ $wallet['name'] }}</a></li>
+                                    <li><a href="{{ $wallet['link'] }}" target="_blank">{{ $wallet['name'] }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
