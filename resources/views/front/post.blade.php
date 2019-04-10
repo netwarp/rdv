@@ -9,6 +9,9 @@
                     <div class="panel-body">
                         <article>
                             <h1 class="h3">{{ $post->title }}</h1>
+                            @if ($post->image)
+                                <img class="img-responsive" src="{{ $post->image ?? '' }}" alt="">
+                            @endif
                             <div>
                                  {!! Markdown::convertToHtml($post->content) !!}
                             </div>

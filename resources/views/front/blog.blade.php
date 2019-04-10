@@ -15,7 +15,7 @@
                                 <span class="pull-right"><i class="fas fa-comment"></i> {{ $post->nb_comments }} commentaire{{ $post->nb_comments >= 2 ? 's' : '' }}</span>
                             </div>
                             
-                            <a href="/blog/{{ $post->slug }}"><img class="img-responsive" src="{{ $post->image }}" alt=""></a>
+                            <a href="/blog/{{ $post->slug }}"><img class="img-responsive" src="{{ $post->image ?? '' }}" alt=""></a>
 
                             <p>
                                 {!! utf8_decode(nl2br($post->preview)) !!}
