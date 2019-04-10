@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-lg-6">
                 @php
-                    $categories = ['Crypto-monnaie', 'Blockchain', 'TOR', 'VPN']
+                    $categories = ['Crypto-monnaie', 'Blockchain', 'Node']
                 @endphp
                 <ul class="list-unstyled">
                     @foreach($categories as $category)
@@ -28,7 +28,7 @@
             </div>
             <div class="col-lg-6">
                 @php
-                    $categories = ['Politique', 'Censure', 'Surveillance', 'Développement']
+                    $categories = ['Politique', 'Développement']
                 @endphp
                 <ul class="list-unstyled">
                     @foreach($categories as $category)
