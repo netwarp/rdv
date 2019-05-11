@@ -68,7 +68,7 @@ Route::group(['prefix' => 'admin' ,'namespace' => 'Admin', 'middleware' => ['aut
 });
 
 
-Route::group(['prefix' => 'profil', 'namespace' => 'Profil', 'middleware' => 'auth', 'as' => 'profil.'], function () {
+Route::group(['prefix' => 'profil', 'namespace' => 'Profil', 'middleware' => ['auth'], 'as' => 'profil.'], function () {
     Route::get('/', ['as' => 'user.getIndex', 'uses' => 'ProfilController@getIndex']);
 
     Route::resources([
