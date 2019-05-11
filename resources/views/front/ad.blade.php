@@ -46,7 +46,7 @@
                                     <div class="data-key">Avis négatif</div>
                                     <div class="data-value">{{ '2' }}</div>
                                 </div>
-                                <a href="/utilisateur/{{ $ad->getuser->name }}" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-search"></i> Plus d'information</a>
+                                <a href="/utilisateur/{{ $ad->getuser->name }}" class="btn btn-primary btn-block"><i class="fas fa-search"></i></i> Plus d'information</a>
                             @endif
                         </div>
                     </div>
