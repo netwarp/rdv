@@ -155,11 +155,11 @@
                 </div>
                 --}}
                 <div class="col-md-4 stat">
-                    + {{ $offers->count() ?? '' }} <br> offres
+                    {{ $offers->count() ?? '' }} <br> offres
                 </div>
 
                 <div class="col-md-4 stat">
-                    + {{ $requests->count() ?? '' }} <br> demandes
+                    {{ $requests->count() ?? '' }} <br> demandes
                 </div>
                 <div class="col-md-4 stat">
                     {{ $posts_count ?? '' }} <br> article{{ $posts_count > 1 ? 's' : '' }} sur le blog
