@@ -56,7 +56,7 @@
                                             <td>{{ $ad->data['currency'] ?? '' }}</td>
                                             <td>{{ $ad->data['location'] ?? '' }}</td>
                                             <td>{{ $ad->data['price'] ?? '' }}</td>
-                                            <td>{{ $ad->created_at }}</td>
+                                            <td>{{ $ad->created_at->format('d/m/Y') }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
