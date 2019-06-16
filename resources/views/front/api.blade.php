@@ -10,10 +10,10 @@
                     </div>
                     <div class="panel-body">
                         <h2 class="h5">Demandes</h2>
-                        <pre>https://cryptodirect.fr/api/requests</pre>
+                        <pre>https://{{ env('APP_NAME') }}/api/requests</pre>
                         <br>
                         <h2 class="h5">Offres</h2>
-                        <pre>https://cryptodirect.fr/api/offers</pre>
+                        <pre>https://{{ env('APP_NAME') }}/api/offers</pre>
                     </div>
                 </div>
             </div>

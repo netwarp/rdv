@@ -86,7 +86,7 @@
                             <a href="#">Lorem ipsum doicing elit. Odio.</a>
                         </div>
                         <div class="item">
-                            <a href="#">Logout</a>
+                            <a href="/logout">Logout</a>
                         </div>
                     </div>
                     @if(session('success'))

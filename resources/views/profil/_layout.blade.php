@@ -30,7 +30,7 @@
                             </a>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Paramètres">
-                            <a class="nav-link" href="{{ ''  }}">
+                            <a class="nav-link" href="{{ action('Profil\SettingsController@getIndex') }}">
                                 <i class="fas fa-cogs"></i>
                                 <span class="nav-link-text">Paramètres</span>
                             </a>

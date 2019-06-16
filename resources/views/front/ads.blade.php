@@ -1,7 +1,7 @@
 @extends('front._layout')
 
 @section('content')
-    <div class="container" style="margin: 3rem 0 0 0;">
+    <div class="container" style="margin-top: 3rem;">
         <div class="row" style="min-height: 62vh;">
             <div class="col-md-9">
                 <div class="panel panel-default">
@@ -51,7 +51,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h2 class="h4">Filtres de recherche</h2>
-                  
+
                         <div>
                             <h3 class="h4">Prix</h3>
                             <div class="row">

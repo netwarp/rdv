@@ -56,7 +56,7 @@
                                             <td>{{ $ad->data['currency'] ?? '' }}</td>
                                             <td>{{ $ad->data['location'] ?? '' }}</td>
                                             <td>{{ $ad->data['price'] ?? '' }}</td>
-                                            <td>{{ $ad->created_at }}</td>
+                                            <td>{{ $ad->created_at->format('d/m/Y') }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -155,11 +155,11 @@
                 </div>
                 --}}
                 <div class="col-md-4 stat">
-                    + {{ $offers->count() ?? '' }} <br> offres
+                    {{ $offers->count() ?? '' }} <br> offres
                 </div>
 
                 <div class="col-md-4 stat">
-                    + {{ $requests->count() ?? '' }} <br> demandes
+                    {{ $requests->count() ?? '' }} <br> demandes
                 </div>
                 <div class="col-md-4 stat">
                     {{ $posts_count ?? '' }} <br> article{{ $posts_count > 1 ? 's' : '' }} sur le blog
