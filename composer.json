@@ -13,7 +13,8 @@
         "graham-campbell/markdown": "^10.3",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "jenssegers/mongodb": "3.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

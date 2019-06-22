@@ -14,6 +14,7 @@ class FrontController extends Controller
 {
     public function getIndex() {
         try {
+            dd('ok');
             $offers = Ad::where('data->type', 'offer')->orderby('id', 'desc')->limit(20)->get();
             $requests = Ad::where('data->type', 'request')->orderby('id', 'desc')->limit(20)->get();
             $posts_count = DB::table('posts')->count();
