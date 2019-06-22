@@ -9,20 +9,20 @@
                         <div class="data">
                             <div class="data-row">
                                 <div class="data-key">Prix</div>
-                                <div class="data-value">{{ $ad->data['price'] }}</div>
+                                <div class="data-value">{{ $ad->price }}</div>
                             </div>
                             <div class="data-row">
                                 <div class="data-key">Monnaie</div>
-                                <div class="data-value">{{ $ad->data['currency'] }}</div>
+                                <div class="data-value">{{ $ad->currency }}</div>
                             </div>
 
                             <div class="data-row">
                                 <div class="data-key">Nom</div>
-                                <div class="data-value">{{ $ad->data['name'] }}</div>
+                                <div class="data-value">{{ $ad->name }}</div>
                             </div>
                             <div class="data-row">
                                 <div class="data-key">Type</div>
-                                <div class="data-value">{{ $ad->data['type'] == 'request' ? 'Demande' : 'Offre' }}</div>
+                                <div class="data-value">{{ $ad->type == 'request' ? 'Demande' : 'Offre' }}</div>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         <div class="data">
                             <div class="data-row">
                                 <div class="data-key">Nom</div>
-                                <div class="data-value">{{ $ad->getUser->name ?? $ad->data['name'] }}</div>
+                                <div class="data-value">{{ $ad->getUser->name ?? $ad->name }}</div>
                             </div>
                             @if (isset($ad->getUser))
                                 <div class="data-row">
@@ -54,12 +54,12 @@
             </div>
             <div class="col-md-8">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h1 class="h3">{{ $ad->data['title'] }}</h1></div>
+                    <div class="panel-heading"><h1 class="h3">{{ $ad->title }}</h1></div>
                     <div class="panel-body">
-                        {{ $ad->data['message'] }}
+                        {{ $ad->message }}
                     </div>
                     <div class="panel-footer">
-                        {{ $ad->data['email'] }}
+                        {{ $ad->email }}
                     </div>
                 </div>
             </div>

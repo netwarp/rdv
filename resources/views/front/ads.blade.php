@@ -12,24 +12,24 @@
                 <ul class="list-group">
 
                     @forelse($ads as $ad)
-                        <li class="list-group-item" data-price="{{ $ad->data['price'] }}" data-location="{{ $ad->data['location'] ?? '' }}">
+                        <li class="list-group-item" data-price="{{ $ad->price }}" data-location="{{ $ad->location ?? '' }}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h2 class="h3"><a href="{{ action('Front\FrontController@getAd', ['id' => $ad->data['public_id' ?? ''], 'slug' => str_slug($ad->data['title']) ]) }}">{{ $ad->data['title'] }}</a></h2>
-                                    <h3 class="h5">{{ $ad->data['name'] }}</h3>
+                                    <h2 class="h3"><a href="{{ action('Front\FrontController@getAd', ['id' => $ad->id, 'slug' => str_slug($ad->title) ]) }}">{{ $ad->title }}</a></h2>
+                                    <h3 class="h5">{{ $ad->name }}</h3>
                                     <p>
-                                        {{ $ad->data['message'] ?? '' }}
+                                        {{ $ad->message ?? '' }}
                                     </p>
                                     <div>
-                                        {{ $ad->created_at->format('d M Y') }}
+                                        {{ $ad->created_at ?? '' }}
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-center">
                                     <div class="h2">
-                                        {{ $ad->data['location'] ?? '' }}
+                                        {{ $ad->location ?? '' }}
                                     </div>
                                     <div class="h3">
-                                        {{ $ad->data['price'] ?? '' }} €
+                                        {{ $ad->price ?? '' }} €
                                     </div>
                                 </div>
                             </div>

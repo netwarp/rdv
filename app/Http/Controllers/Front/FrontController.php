@@ -14,10 +14,10 @@ class FrontController extends Controller
 {
     public function getIndex() {
         try {
-            dd('ok');
-            $offers = Ad::where('data->type', 'offer')->orderby('id', 'desc')->limit(20)->get();
-            $requests = Ad::where('data->type', 'request')->orderby('id', 'desc')->limit(20)->get();
+            $offers = Ad::where('type', 'offer')->orderby('id', 'desc')->limit(20)->get();
+            $requests = Ad::where('type', 'request')->orderby('id', 'desc')->limit(20)->get();
             $posts_count = DB::table('posts')->count();
+
             return view('front.index', [
                 'offers' => $offers,
                 'requests' => $requests,
@@ -73,20 +73,12 @@ class FrontController extends Controller
                 'location' => $request->get('location'),
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
-                'public_id' => str_random(8)
             ];
 
             if ($request->has('other_currency')) {
                 $data['other_currency'] = $request->get('other_currency');
             }
 
-            /*
-            $ad = Ad::create([
-                'user_id' => $request->user()->id ?? null,
-                'data' => json_encode($data)
-            ]);
-
-            */
             $ad = new Ad;
             $ad->user_id = $request->user()->id ?? null;
             $ad->data = $data;
@@ -117,7 +109,7 @@ class FrontController extends Controller
     public function getOffers() {
         try {
             $title = 'Offres';
-            $ads = Ad::where('data->type', 'offer')->orderby('id', 'desc')->get();
+            $ads = Ad::where('type', 'offer')->orderby('id', 'desc')->get();
             return view('front.ads', [
                 'title' => $title,
                 'ads' => $ads
@@ -130,7 +122,7 @@ class FrontController extends Controller
 
     public function getRequests() {
         $title = 'Demandes';
-        $ads = Ad::where('data->type', 'request')->orderBy('id', 'desc')->get();
+        $ads = Ad::where('type', 'request')->orderBy('id', 'desc')->get();
         return view('front.ads', [
             'title' => $title,
             'ads' => $ads
@@ -138,7 +130,7 @@ class FrontController extends Controller
     }
 
     public function getAd($id, $slug) {
-        $ad = Ad::where('data->public_id', $id)->first();
+        $ad = Ad::where('_id', $id)->first();
         return view('front.ad', compact('ad'));
     }
 

@@ -11,13 +11,9 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::connection('mongodb')->collection('users')->truncate();
 
-        DB::table('users')->truncate();
-
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-        DB::table('users')->insert([
+        DB::connection('mongodb')->collection('users')->insert([
             [
                 'name' => 'admin',
                 'email' => 'admin@admin.com',
@@ -29,8 +25,7 @@ class UsersTableSeeder extends Seeder
                 'email' => 'toto@toto.com',
                 'password' => bcrypt('toto'),
                 'status' => 'user'
-            ],
+            ]
         ]);
-
     }
 }

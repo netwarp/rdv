@@ -2,23 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Ad extends Model
 {
-    protected $table = 'ads';
+    protected $connection = 'mongodb';
 
-    protected $casts = [
-        'data' => 'array'
-    ];
+    protected $collection = 'ads';
+
     /*
-    protected $fillable = [
-        'user_id',
-        'data'
-    ];
-    */
-
     public function getUser() {
         return $this->belongsTo('App\User', 'user_id');
     }
+    */
 }

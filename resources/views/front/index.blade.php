@@ -23,11 +23,11 @@
                                 <tbody>
                                     @foreach($offers as $ad)
                                         <tr>
-                                            <td>{{ $ad->data['name'] ?? '' }}</td>
-                                            <td>{{ $ad->data['currency'] ?? '' }}</td>
-                                            <td>{{ $ad->data['location'] ?? '' }}</td>
-                                            <td>{{ $ad->data['price'] ?? '' }}</td>
-                                            <td>{{ $ad->created_at->format('d/m/Y') }}</td>
+                                            <td>{{ $ad->name ?? '' }}</td>
+                                            <td>{{ $ad->currency ?? '' }}</td>
+                                            <td>{{ $ad->location ?? '' }}</td>
+                                            <td>{{ $ad->price ?? '' }}</td>
+                                            <td>{{ $ad->created_at ?? '' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -52,11 +52,11 @@
                                 <tbody>
                                     @foreach($requests as $ad)
                                         <tr>
-                                            <td>{{ $ad->data['name'] ?? '' }}</td>
-                                            <td>{{ $ad->data['currency'] ?? '' }}</td>
-                                            <td>{{ $ad->data['location'] ?? '' }}</td>
-                                            <td>{{ $ad->data['price'] ?? '' }}</td>
-                                            <td>{{ $ad->created_at->format('d/m/Y') }}</td>
+                                            <td>{{ $ad->name ?? '' }}</td>
+                                            <td>{{ $ad->currency ?? '' }}</td>
+                                            <td>{{ $ad->location ?? '' }}</td>
+                                            <td>{{ $ad->price ?? '' }}</td>
+                                            <td>{{ $ad->created_at ?? '' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
