@@ -8,7 +8,7 @@
     <div id="app" style="padding-top: 50px;">
         @include('front.includes.navbar')
         <div class="container-fluid" style="margin-top: 3rem">
-            <div class="row">
+            <div class="row" style="display: flex;">
                 <div class="col-md-2" id="sidebar">
                     <ul>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Accueil">
