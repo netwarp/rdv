@@ -4,12 +4,20 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+#use Illuminate\Foundation\Auth\User as Authenticatable;
+
+use Jenssegers\Mongodb\Auth\User as Authenticatable;
 
 //class User extends Authenticatable implements MustVerifyEmail
-class User extends Eloquent
+class User extends Authenticatable
 {
+    protected $connection = 'mongodb';
+
+    protected $collection = 'users';
+
+    protected $fillable = [
+        'name', 'email', 'password', 'description', 'data'
+    ];
     /*
     use Notifiable;
 

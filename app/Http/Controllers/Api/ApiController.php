@@ -11,26 +11,13 @@ use Illuminate\Support\Facades\Auth;
 class ApiController extends Controller
 {
     public function getOffers() {
-        $ads = DB::table('ads')->where('data->type', 'offer')->get();
+        $ads = DB::connection('mongodb')->collection('ads')->where('type', 'offer')->get();
 
-        foreach ($ads as $ad) {
-            $data = json_decode($ad->data);
-            $ad->data = $data;
-
-            unset($ad->id);
-        }
         return response()->json($ads);
     }
 
     public function getRequests() {
-        $ads = DB::table('ads')->where('data->type', 'request')->get();
-
-        foreach ($ads as $ad) {
-            $data = json_decode($ad->data);
-            $ad->data = $data;
-
-            unset($ad->id);
-        }
+        $ads = DB::connection('mongodb')->collection('ads')->where('type', 'request')->get();
 
         return response()->json($ads);
     }

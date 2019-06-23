@@ -11,7 +11,7 @@ class ProfilController extends Controller
 {
     public function getindex(Request $request) {
         $ads = Ad::where('user_id', $request->user()->id)->count();
-      //  $rates = Rate::where('rated_user_id', $request->user()->id)->where('score', 'yes')->count();
-        return view('profil.index', compact('ads', 'rates'));
+      #  $rates = Rate::where('rated_user_id', $request->user()->id)->where('score', 'yes')->count();
+        return view('profil.index', compact('ads'));
     }
 }

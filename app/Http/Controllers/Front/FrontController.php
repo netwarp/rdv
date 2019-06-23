@@ -8,6 +8,7 @@ use App\Models\Ad;
 use DB;
 use Illuminate\Support\Facades\Redis;
 use Carbon\Carbon;
+use App\User;
 
 
 class FrontController extends Controller
@@ -81,7 +82,11 @@ class FrontController extends Controller
 
             $ad = new Ad;
             $ad->user_id = $request->user()->id ?? null;
-            $ad->data = $data;
+
+            foreach ($data as $key => $value) {
+                $ad[$key] = $value;
+            }
+
             $ad->save();
 
 
@@ -201,7 +206,7 @@ class FrontController extends Controller
     }
 
     public function test() {
-        $posts = DB::table('posts')->get();
-        dd($posts);
+        $user = new User;
+        dd($user);
     }
 }
