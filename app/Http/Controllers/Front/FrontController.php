@@ -89,9 +89,14 @@ class FrontController extends Controller
 
             $ad->save();
 
+            if ($request->user()) {
+                $user = User::findOrFail($request->user()['_id']);
 
-         //   Redis::incr('ads');
-           // Redis::publish('ads_notifications', json_encode($data));
+                $ads = $user->ads;
+                array_unshift($ads, $ad['_id']);
+                $user->save(); 
+            }
+
 
             if ($request->get('type') == 'offer') {
                 $redirectRoute = 'front.getOffers';

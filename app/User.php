@@ -16,7 +16,8 @@ class User extends Authenticatable
     protected $collection = 'users';
 
     protected $fillable = [
-        'name', 'email', 'password', 'description', 'data'
+        'name', 'email', 'password', 'description', 'data',
+        'ads', 'rates', 'rates_percent',
     ];
     /*
     use Notifiable;
