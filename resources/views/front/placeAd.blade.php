@@ -32,7 +32,7 @@
                     </div>
                 @endif
 
-                <form action="{{ action('Front\FrontController@postPlaceAd') }}" method="post" class="form-horizontal">
+                <form action="{{ action('Front\FrontController@postPlaceAd') }}" method="post" class="form-horizontal form-place-ad">
                     {{ csrf_field() }}
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -87,12 +87,62 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
+                            Contact
+                        </div>
+                        <div class="panel-body">
+                            <div class="row form-group">
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <input type="text" class="form-control" name="phone" placeholder="Téléphone">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </div>
+                                        <input type="text" class="form-control" name="whatsapp" placeholder="Whatsapp">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fab fa-telegram"></i>
+                                        </div>
+                                        <input type="text" class="form-control" name="telegram" placeholder="Telegram">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fas fa-at"></i>
+                                        </div>
+                                        <input type="email" class="form-control" name="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="signal" placeholder="Signal">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="bitmessage" placeholder="Bitmessage">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
                             Localisation
                         </div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="location" class="col-sm-2 control-label">Ville ou code postal</label>
-                                <div class="col-md-10">
+                                <label for="location" class="col-sm-3 control-label">Ville ou code postal</label>
+                                <div class="col-md-9">
                                     <input type="text" class="form-control" name="location" value="{{ old('location') }}" required>
                                 </div>
                             </div>
@@ -107,14 +157,7 @@
                             <div class="form-group">
                                 <label for="name" class="col-sm-2 control-label">Pseudo</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="name" value="{{ Auth::user()->name ?? '' }}" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Email</label>
-                                <div class="col-md-10">
-                                    <input type="email" class="form-control" name="email" value="{{ Auth::user()->email ?? '' }}" required>
+                                    <input type="text" class="form-control" name="name" value="{{ Auth::user()->name ?? 'Anon' }}" required readonly disabled>
                                 </div>
                             </div>
 
@@ -130,9 +173,9 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-offset-1">
+
                                     <button type="submit" class="btn btn-primary btn-lg">Valider</button>
-                                </div>
+
                             </div>
                         </div>
                     </div>

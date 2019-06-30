@@ -9,7 +9,7 @@ use DB;
 use Illuminate\Support\Facades\Redis;
 use Carbon\Carbon;
 use App\User;
-
+use File;
 
 class FrontController extends Controller
 {
@@ -17,12 +17,12 @@ class FrontController extends Controller
         try {
             $offers = Ad::where('type', 'offer')->orderby('id', 'desc')->limit(20)->get();
             $requests = Ad::where('type', 'request')->orderby('id', 'desc')->limit(20)->get();
-            $posts_count = DB::table('posts')->count();
+            //$posts_count = DB::table('posts')->count();
 
             return view('front.index', [
                 'offers' => $offers,
                 'requests' => $requests,
-                'posts_count' => $posts_count,
+           //     'posts_count' => $posts_count,
             ]);
         } catch ( \Exception $e ) {
             \Debugbar::addException( $e );
@@ -68,6 +68,7 @@ class FrontController extends Controller
             $data = [
                 'currency' => $request->get('currency'),
                 'title' => $request->get('title'),
+                'slug' => str_slug($request->get('title')),
                 'message' => $request->get('message'),
                 'price' => $request->get('price'),
                 'type' => $request->get('type'),
@@ -211,7 +212,6 @@ class FrontController extends Controller
     }
 
     public function test() {
-        $user = new User;
-        dd($user);
+
     }
 }

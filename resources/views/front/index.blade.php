@@ -23,11 +23,11 @@
                                 <tbody>
                                     @foreach($offers as $ad)
                                         <tr>
-                                            <td>{{ $ad->name ?? '' }}</td>
-                                            <td>{{ $ad->currency ?? '' }}</td>
-                                            <td>{{ $ad->location ?? '' }}</td>
-                                            <td>{{ $ad->price ?? '' }}</td>
-                                            <td>{{ $ad->created_at ?? '' }}</td>
+                                            <td><a href="{{ action('Front\FrontController@getAd', ['id' => $ad['_id'], 'slug' => $ad->slug] ) }}">{{ $ad->name ?? '' }}</a></td>
+                                            <td><a href="{{ action('Front\FrontController@getAd', ['id' => $ad['_id'], 'slug' => $ad->slug] ) }}">{{ $ad->currency ?? '' }}</a></td>
+                                            <td><a href="{{ action('Front\FrontController@getAd', ['id' => $ad['_id'], 'slug' => $ad->slug] ) }}">{{ $ad->location ?? '' }}</a></td>
+                                            <td><a href="{{ action('Front\FrontController@getAd', ['id' => $ad['_id'], 'slug' => $ad->slug] ) }}">{{ $ad->price ?? '' }}</a></td>
+                                            <td><a href="{{ action('Front\FrontController@getAd', ['id' => $ad['_id'], 'slug' => $ad->slug] ) }}">{{ $ad->created_at->format('d/m/Y') ?? '' }}</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -50,13 +50,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($requests as $ad)
+                                    @foreach($offers as $ad)
                                         <tr>
-                                            <td>{{ $ad->name ?? '' }}</td>
-                                            <td>{{ $ad->currency ?? '' }}</td>
-                                            <td>{{ $ad->location ?? '' }}</td>
-                                            <td>{{ $ad->price ?? '' }}</td>
-                                            <td>{{ $ad->created_at ?? '' }}</td>
+                                            <td><a href="#">{{ $ad->name ?? '' }}</a></td>
+                                            <td><a href="#">{{ $ad->currency ?? '' }}</a></td>
+                                            <td><a href="#">{{ $ad->location ?? '' }}</a></td>
+                                            <td><a href="#">{{ $ad->price ?? '' }}</a></td>
+                                            <td><a href="{{ action('Front\FrontController@getAd', ['id' => $ad['_id'], 'slug' => $ad->slug] ) }}">{{ $ad->created_at->format('d/m/Y') ?? '' }}</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -161,9 +161,11 @@
                 <div class="col-md-4 stat">
                     {{ $requests->count() ?? '' }} <br> demandes
                 </div>
+                {{--
                 <div class="col-md-4 stat">
                     {{ $posts_count ?? '' }} <br> article{{ $posts_count > 1 ? 's' : '' }} sur le blog
                 </div>
+                --}}
             </div>
             <div class="row" style="margin-top: 80px;">
                 <h5 class="title">Bientôt sur IOS et Android...</h5>

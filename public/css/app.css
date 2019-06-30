@@ -7431,3 +7431,9 @@ strong {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 992px) {
+  .form-place-ad .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
