@@ -11,6 +11,7 @@ class Ad extends Model
     protected $collection = 'ads';
 
     public function user() {
-        return $this->belongsTo('User');
+
+       return $this->belongsTo('App\User');
     }
 }

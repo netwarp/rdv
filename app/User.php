@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 #use Illuminate\Foundation\Auth\User as Authenticatable;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 
@@ -32,6 +33,6 @@ class User extends Authenticatable
     */
 
     public function ads() {
-        return $this->hasMany('Ad');
+        return $this->hasMany('App\Models\Ad');
     }
 }
