@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Ad;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use Carbon\Carbon;
 use App\User;
@@ -227,9 +228,22 @@ class FrontController extends Controller
         return view('front.user', compact('user'));
     }
 
+    public function postRate(Request $request) {
+
+        $request->validate([
+
+        ]);
+
+        $data = [
+            'rater_id' => $request->get('rater_id'),
+            'rated_id' => $request->get('rated_id'),
+            'level' => $request->get('level'),
+            'comment' => $request->get('comment'),
+        ];
+    }
+
     public function test() {
-        $ad = Ad::findOrFail('5d21bf51bb06242f100058b4');
-        $user = $ad->user;
-        dd($user);
+        $ads = Ad::all();
+        dd($ads);
     }
 }

@@ -34,7 +34,34 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <h3>Derniers commentaires</h3>
+                        <hr>
+                        <h3>Noter un vendeur</h3>
+                        <form action="{{ action('Front\FrontController@postRate') }}" method="POST">
+                            {{ csrf_field() }}
+                            <div>
+                                <input type="hidden" name="rater_id" value="{{ Auth::user()->id }}" readonly>
+                                <input type="hidden" name="rated_id" value="{{ $user->id }}" readonly>
+                            </div>
+                            <div class="form-group rate-thumbs">
+                                <i>Votre avis</i>
+                                <i id="up" class="far fa-thumbs-up icon-rate"></i>
+                                <i id="down" class="far fa-thumbs-down icon-rate"></i>
+                                <small>(Cliquer sur l'une des deux icones)</small>
+                            </div>
+                            <div class="form-group">
+                                <div id="rate-level">
+                                </div>
+                                <input type="hidden" name="level" id="level">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
+                            </div>
+                        </form>
+
+                        <h3>Dernières notes</h3>
                         @for($i = 0; $i < 10; $i++)
                             <div class="panel panel-default">
                                 <div class="panel-body">
@@ -54,3 +81,21 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script>
+        const up = document.querySelector('#up');
+        const down = document.querySelector('#down');
+        const rate_level = document.querySelector('#rate-level');
+        const level = document.querySelector('#level');
+
+        up.addEventListener('click', () => {
+            rate_level.innerHTML = 'Positif';
+            level.value = 1;
+        });
+        down.addEventListener('click', () => {
+            rate_level.innerHTML = 'Négatif';
+            level.value = 0;
+        });
+    </script>
+@endpush

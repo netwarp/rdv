@@ -7437,3 +7437,18 @@ strong {
     margin-bottom: 20px;
   }
 }
+.rate-thumbs {
+  margin-bottom: 2rem;
+  transition: 0.4s ease all;
+  display: flex;
+  align-items: center;
+}
+.rate-thumbs i {
+  font-size: 3rem;
+  margin-right: 3rem;
+  cursor: pointer;
+  transition: 0.4s ease all;
+}
+.rate-thumbs i:hover {
+  font-size: 3.5rem;
+}
