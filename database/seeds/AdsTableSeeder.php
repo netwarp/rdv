@@ -21,7 +21,7 @@ class AdsTableSeeder extends Seeder
         $ad->title = 'Vend pour 50€ de btc à Paris';
         $ad->slug = str_slug('Vend pour 50€ de btc à Paris');
         $ad->message = 'Telegram: toto';
-        $ad->price = '100€ prix du marché';
+        $ad->price = '50€ prix du marché';
         $ad->type = 'offer';
         $ad->location = 'Paris';
         $ad->name = 'toto';

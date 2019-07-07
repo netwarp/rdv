@@ -100,9 +100,11 @@ class AdsController extends Controller
 
         $ad = Ad::findOrfail($id);
 
-        $ad->update([
-            'data' => json_encode($data)
-        ]);
+        foreach ($data as $key => $value) {
+            $ad[$key] = $value;
+        }
+
+        $ad->save();
 
         return redirect()->action('Profil\AdsController@index')->with('success', 'Annonce mise à jour');
     }

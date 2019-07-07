@@ -50,7 +50,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($offers as $ad)
+                                    @foreach($requests as $ad)
                                         <tr>
                                             <td><a href="#">{{ $ad->name ?? '' }}</a></td>
                                             <td><a href="#">{{ $ad->currency ?? '' }}</a></td>

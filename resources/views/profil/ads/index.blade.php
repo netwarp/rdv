@@ -26,12 +26,12 @@
                     <tbody>
                     @foreach($ads as $ad)
                         <tr>
-                            <td>{{ json_decode($ad->data)->currency }}</td>
-                            <td>{{ json_decode($ad->data)->status }}</td>
-                            <td>{{ json_decode($ad->data)->type }}</td>
-                            <td>{{ json_decode($ad->data)->title }}</td>
-                            <td>{{ json_decode($ad->data)->price }}</td>
-                            <td>{{ json_decode($ad->data)->location }}</td>
+                            <td>{{ $ad->currency }}</td>
+                            <td>{{ $ad->status }}</td>
+                            <td>{{ $ad->type }}</td>
+                            <td>{{ $ad->title }}</td>
+                            <td>{{ $ad->price }}</td>
+                            <td>{{ $ad->location }}</td>
                             <td>{{ $ad->created_at->format('m/d/Y') }}</td>
                             <td>
                                 <a href="{{ action('Profil\AdsController@edit', $ad->id) }}" class="btn btn-info"><i class="fa fa-edit"></i> Éditer</a>
