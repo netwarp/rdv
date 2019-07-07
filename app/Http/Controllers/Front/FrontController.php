@@ -45,7 +45,17 @@ class FrontController extends Controller
                 'iota',
                 'stratis'
             ];
-            return view('front.placeAd', compact('currencies'));
+
+            $departments = database_path('resources/fr.json');
+            $departments = File::get($departments);
+            $departments = json_decode($departments);
+            foreach ($departments as $department) {
+                unset($department->id);
+                unset($department->region_code);
+            }
+
+
+            return view('front.placeAd', compact('currencies', 'departments'));
         } catch ( \Exception $e ) {
             \Debugbar::addException( $e );
             return redirect()->back()->with( 'error', 'Une erreur est survenue, merci de ré-essayer' );
@@ -211,7 +221,15 @@ class FrontController extends Controller
         }
     }
 
-    public function test() {
+    public function getUser($name) {
+        $user = User::where('name', $name)->first();
 
+        return view('front.user', compact('user'));
+    }
+
+    public function test() {
+        $ad = Ad::findOrFail('5d21bf51bb06242f100058b4');
+        $user = $ad->user;
+        dd($user);
     }
 }

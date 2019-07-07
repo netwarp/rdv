@@ -35,9 +35,9 @@
                         <div class="data">
                             <div class="data-row">
                                 <div class="data-key">Nom</div>
-                                <div class="data-value">{{ $ad->getUser->name ?? $ad->name }}</div>
+                                <div class="data-value">{{ $ad->user()->name ?? $ad->name }}</div>
                             </div>
-                            @if (isset($ad->getUser))
+                            @if (isset($ad->user))
                                 <div class="data-row">
                                     <div class="data-key">Avis positifs</div>
                                     <div class="data-value">{{ '10' }}</div>
@@ -46,7 +46,7 @@
                                     <div class="data-key">Avis négatif</div>
                                     <div class="data-value">{{ '2' }}</div>
                                 </div>
-                                <a href="/utilisateur/{{ $ad->getuser->name }}" class="btn btn-primary btn-block"><i class="fas fa-search"></i></i> Plus d'information</a>
+                                <a href="/utilisateur/{{ $ad->user->name }}" class="btn btn-primary btn-block"><i class="fas fa-search"></i></i> Plus d'information</a>
                             @endif
                         </div>
                     </div>
