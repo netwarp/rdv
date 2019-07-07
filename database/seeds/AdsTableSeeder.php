@@ -16,6 +16,7 @@ class AdsTableSeeder extends Seeder
         DB::connection('mongodb')->collection('ads')->truncate();
 
         $ad = new Ad;
+        $ad->user_id = $_SESSION['users'][0]['_id'];
         $ad->currency = 'bitcoin';
         $ad->title = 'Vend pour 50€ de btc à Paris';
         $ad->slug = str_slug('Vend pour 50€ de btc à Paris');
@@ -28,6 +29,7 @@ class AdsTableSeeder extends Seeder
         $ad->save();
 
         $ad = new Ad;
+        $ad->user_id = $_SESSION['users'][1]['_id'];
         $ad->currency = 'bitcoin';
         $ad->title = 'Achète pour 200€ de btc à Paris';
         $ad->slug = str_slug('Achète pour 200€ de btc à Paris');
@@ -38,7 +40,5 @@ class AdsTableSeeder extends Seeder
         $ad->name = 'bob';
         $ad->email = 'bob@bob.com';
         $ad->save();
-
-        var_dump($_SESSION['users'][1]);
     }
 }
